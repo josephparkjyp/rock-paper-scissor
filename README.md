@@ -1,2 +1,2 @@
 # rock-paper-scissor
-Rock Paper Scissor game using JavaScript
+This is a console-based game of Rock Paper Scissor that I've created to test my knowledge on basic JavaScript syntax.

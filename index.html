@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function computerPlay() {
+            let choice = Math.floor(Math.random() * 3)
+            if (choice == 0) {
+                return "Rock";
+            } else if (choice == 1) {
+                return "Paper";
+            } else if (choice == 2) {
+                return "Scissor";
+            }
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            playerSelection = playerSelection.toLowerCase();
+            computerSelection = computerSelection.toLowerCase();
+            
+            if (playerSelection == "rock") {
+                if (computerSelection == "rock") {
+                    return "Tie!";
+                } else if (computerSelection == "paper") {
+                    return "You lose! Paper beats Rock.";
+                } else if (computerSelection == "scissor") {
+                    return "You win! Rock beats Scissor.";
+                }
+            }
+
+            if (playerSelection == "paper") {
+                if (computerSelection == "rock") {
+                    return "You win! Paper beats Rock.";
+                } else if (computerSelection == "paper") {
+                    return "Tie!";
+                } else if (computerSelection == "scissor") {
+                    return "You lose! Scissor beats Paper.";
+                }
+            }
+
+            if (playerSelection == "scissor") {
+                if (computerSelection == "rock") {
+                    return "You lose! Rock beats Scissor.";
+                } else if (computerSelection == "paper") {
+                    return "You win! Scissor beats Paper.";
+                } else if (computerSelection == "scissor") {
+                    return "Tie!";
+                }
+            }
+        }
+
+        function game() {
+            
+            let player = 0;
+            let computer = 0;
+
+            for (let i = 1; i < 6; i ++) {
+                let ans = prompt("Choose Rock, Paper, or Scissor: ");
+                let outcome = playRound(ans, computerPlay());
+                if (outcome.substr(0, 5) == "You w") {
+                    player += 1;
+                }
+                if (outcome.substr(0, 5) == "You l") {
+                    computer += 1;
+                }
+                console.log("Round " + i + ": " + outcome);
+                console.log("Score: ");
+                console.log("Player: " + player);
+                console.log("Computer: " + computer);
+            }
+
+            if (player > computer) {
+                console.log("You won! GG.");
+            } else {
+                console.log("Oop. Better Luck Next Time!");
+            }
+
+        }
+    </script>
+</body>
+</html>
