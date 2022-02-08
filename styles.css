@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border: 1px solid black;
+}
+
+.score {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.round, .playerScore, .computerScore {
+    
+}
+
+.buttons {
+    display: flex;
+    padding: 10px;
+    gap: 25px;
+}
