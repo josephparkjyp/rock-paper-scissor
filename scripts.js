@@ -41,23 +41,12 @@ let roundCounter = 0;
 let playerCounter = 0;
 let computerCounter = 0;
 
-let round = document.querySelector(".round");
-round.textContent = "0"
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(playGame(button.id));
+    });
+});
 
-//Per button click, add +1 to round counter
-let getButtons = document.querySelectorAll('button');
-getButtons.forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-        roundCounter += 1;
-        round.textContent = roundCounter; //per button click, +1 to round counter
-    })
-  });
 
-let rock = document.querySelectorAll('.rock');
-let paper = document.querySelector('.paper');
-let scissors = document.querySelector('.scissors');
-let announcement = document.querySelector('.announcement');
 
-rock.addEventListener('click', function (e) {
-    console.log(e.target);
-  });
